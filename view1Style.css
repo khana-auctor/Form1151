@@ -1,0 +1,369 @@
+﻿/* Base style for disabled radios */
+.custom-radio input[type="radio"][disabled] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background-color: #ccc !important; /* outer circle */
+    border: 1px solid #999 !important;
+    border-radius: 50% !important;
+    width: 16px !important;
+    height: 16px !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    margin-right: 5px !important;
+    opacity: 1 !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}
+
+    /* Dot inside disabled radios */
+    .custom-radio input[type="radio"][disabled]::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* centers the dot */
+        width: 8px;
+        height: 8px;
+        background-color: transparent; /* hidden by default */
+        border-radius: 50%; /* makes it perfectly round */
+    }
+
+    /* When checked, show darker dot */
+    .custom-radio input[type="radio"][disabled]:checked::before {
+        background-color: #333; /* dark gray for visibility */
+    }
+
+
+
+.styled-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: Verdana;
+    font-size: 9pt;
+    width: 98%;
+    padding: 2px 30px 2px 4px; /* space for arrow */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px 16px;
+}
+
+
+.fixed-textbox {
+    resize: none;
+    width: 527px;
+    height: 349px;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+
+.phone:focus {
+    border: 1px dashed red;
+}
+
+table.auto-style82 {
+    margin: 0in 0in 0in 0.25in;
+    border-collapse: collapse;
+}
+
+.signature-section td {
+    border: none;
+    padding: 6px 0;
+    vertical-align: middle;
+}
+
+/* Unified style for name and signature fields */
+.signature-section .sig {
+    display: inline-block;
+    background-color: #999;
+    height: 22px;
+    width: 365px;
+    border: none;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-family: 'Times New Roman', serif;
+    font-size: 11.5pt;
+    resize: none;
+    line-height: 22px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure <textarea> with .sig class behaves like <input> */
+.signature-section textarea.sig {
+    height: 22px !important;
+    width: 365px !important;
+    resize: horizontal !important;
+    padding: 0 !important;
+    line-height: 22px !important;
+    box-sizing: border-box;
+    background-color: #999 !important;
+    border: none !important;
+    font-family: 'Times New Roman', serif !important;
+    font-size: 11.5pt !important;
+    margin-left: 10px !important;
+    vertical-align: middle !important;
+}
+
+/* Transparent style for phone number fields */
+.signature-section .phone,
+.signature-section #txtPhone {
+    display: inline-block;
+    background-color: transparent;
+    height: 22px;
+    width: 365px;
+    border: none;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-family: 'Times New Roman', serif;
+    font-size: 11.5pt;
+    resize: none;
+    line-height: 22px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signature-section tr {
+    margin-bottom: 12px;
+}
+
+/* Base: all links load blue */
+a {
+    color: blue !important;
+    text-decoration: underline !important;
+}
+
+    /* Hover/active */
+    a:hover {
+        color: darkblue !important;
+    }
+
+    a:active {
+        color: red !important;
+    }
+
+    /* Simulated visited — must come after the base rule */
+    a.session-visited,
+    a[href^="http"].session-visited,
+    a[href^="/"].session-visited,
+    a[href^="./"].session-visited,
+    a[href^="../"].session-visited {
+        color: purple !important;
+    }
+
+    /* Mailto simulated visited */
+    a.visited-mail,
+    a[href^="mailto:"].visited-mail {
+        color: purple !important;
+    }
+
+    /* Mailto default (in case other rules interfere) */
+    a[href^="mailto:"] {
+        color: blue !important;
+        text-decoration: underline !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+    }
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: 20px;
+    height: 25px;
+}
+
+/* Container keeps the same size */
+.auto-style56 {
+    width: 20px;
+    height: 25px;
+    display: flex;
+    align-items: center; /* center vertically */
+    justify-content: center;
+}
+
+    /* IE/Legacy uses its native look */
+    .auto-style56 input[type="checkbox"] {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+        /* Disabled state for legacy browsers */
+        .auto-style56 input[type="checkbox"]:disabled {
+            cursor: not-allowed !important;
+            opacity: 0.6 !important;
+        }
+
+/* Modern browsers only - UPDATED */
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    .auto-style56 input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        border: 1px solid #808080;
+        border-radius: 3px;
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+        .auto-style56 input[type="checkbox"]:checked {
+            position: relative;
+        }
+
+            .auto-style56 input[type="checkbox"]:checked::after {
+                content: "";
+                position: absolute;
+                left: 3px;
+                top: 0px;
+                width: 4px;
+                height: 8px;
+                border: solid black;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        /* DISABLED STATE - only apply when actually disabled */
+        .auto-style56 input[type="checkbox"]:disabled {
+            cursor: not-allowed;
+            opacity: 1; /* Increased from 0.6 to 0.8 for darker */
+            background-color: #e0e0e0; /* Darker gray */
+            border-color: #a0a0a0; /* Darker border */
+        }
+
+            .auto-style56 input[type="checkbox"]:disabled:checked::after {
+                border-color: #808080;
+            }
+        /* ENABLED STATE - ensure proper styling when enabled */
+        .auto-style56 input[type="checkbox"]:enabled {
+            opacity: 1;
+            background-color: #fff;
+            border-color: #808080;
+            cursor: pointer;
+        }
+
+            .auto-style56 input[type="checkbox"]:enabled:checked::after {
+                border-color: black;
+            }
+}
+.dark-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* make underline darker/thicker */
+    text-underline-offset: 2px; /* optional: adjust spacing from text */
+    text-decoration-color: black; /* ensure dark underline */
+}
+
+.small-text {
+    font-size: 12pt; /* same as <font size="3"> */
+}
+
+.dark-underline {
+    display: inline-block; /* ensures border applies cleanly */
+    border-bottom: 1px solid black;
+    padding-bottom: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.underline-input {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    padding-bottom: 2px;
+    margin-top: 0px; /* match original MARGIN: 0in */
+    margin-bottom: 5px; /* reduce spacing to match original compact layout */
+    text-align: center;
+    line-height: 0.177in; /* match original line height */
+}
+
+.auto-style33 input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    vertical-align: middle;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #808080;
+    border-radius: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+    /* Custom checkmark */
+    .auto-style33 input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 0px;
+        width: 4px;
+        height: 8px;
+        border: solid black;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+.auto-style33 label {
+    margin-left: 6px; /* spacing between checkbox and label */
+    vertical-align: middle;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.textbox-with-clear {
+    padding-right: 28px; /* space for X */
+    box-sizing: border-box;
+}
+
+.clear-text-btn {
+    display: none; /* hidden by default */
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+#bcsName,
+#bcsSig {
+    font-family: 'Times New Roman', serif;
+    font-size: 11.5pt;
+    background-color: #999;
+    color: black;
+    border: none;
+    box-sizing: border-box;
+}
+
+/* Growable multiline with fixed starting size */
+#bcsSig {
+    height: 22px !important;
+    width: 365px !important; /* match original height */
+    resize: horizontal !important; /* allow vertical resize */
+    overflow: auto !important; /* show scrollbars if needed */
+    line-height: normal;
+}
